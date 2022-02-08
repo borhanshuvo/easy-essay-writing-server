@@ -34,7 +34,7 @@ mongoose
     useUnifiedTopology: true,
     useCreateIndex: true,
   })
-  .then(console.log("Connect to mongoDB"))
+  .then(console.log(`Connect to mongoDB at port ${PORT}`))
   .catch((err) => console.log(err));
 
 app.use("/faq", faqRoute);
@@ -52,7 +52,7 @@ app.use("/earnInfo", affiliateEarning);
 app.use("/discount", discountPercentage);
 
 app.get("/", (req, res) => {
-  res.send(" Bismillah Hello World!!!");
+  res.send("Bismillah Hello World!!!");
 });
 
 app.listen(process.env.PORT || PORT);
